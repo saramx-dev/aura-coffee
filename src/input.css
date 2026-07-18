@@ -1,0 +1,404 @@
+@import "tailwindcss";
+
+@theme {
+  /* ==========================================================================
+     ==========================================================================
+     PART 1: PRIMITIVE TOKENS — the single source of truth.
+     Change a value here, and every semantic token (and every product that
+     shares this file — landing page, email templates, future storefront)
+     updates automatically.
+     ==========================================================================
+     ========================================================================== */
+
+  /* --- TYPOGRAPHY PRIMITIVES (23 variables) --- */
+  /* Font Family */
+  --font-family-display: "Fraunces";
+  --font-family-body: "DM Sans";
+
+  /* Font Size (converted to rem, px shown in comment) */
+  --text-size-13: 0.8125rem; /* 13px */
+  --text-size-16: 1rem; /* 16px */
+  --text-size-20: 1.25rem; /* 20px */
+  --text-size-25: 1.5625rem; /* 25px */
+  --text-size-31: 1.9375rem; /* 31px */
+  --text-size-39: 2.4375rem; /* 39px */
+  --text-size-49: 3.0625rem; /* 49px */
+
+  /* Line-height (converted to rem, px shown in comment) */
+  --leading-line-height-h1-49: 3.6875rem; /* 59px */
+  --leading-line-height-h2-39: 2.9375rem; /* 47px */
+  --leading-line-height-h3-31: 2.3125rem; /* 37px */
+  --leading-line-height-h4-25: 1.875rem; /* 30px */
+  --leading-line-height-bodyLarge-20: 2rem; /* 32px */
+  --leading-line-height-body-16: 1.625rem; /* 26px */
+  --leading-line-height-caption-13: 1.3125rem; /* 21px */
+
+  /* Letter Tracking — kept in px (tracking is conventionally not rem-scaled).
+     Named directly in Tailwind's --tracking-* namespace so these generate
+     ready-to-use tracking-tight / tracking-normal / tracking-loose classes —
+     no semantic wrapper needed since only 3 values exist across the whole type scale. */
+  --tracking-tight: -1px;
+  --tracking-normal: 0px;
+  --tracking-loose: 2px;
+
+  /* Font Weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* --- COLOR BASE PRIMITIVES (13 variables) --- */
+  --color-espresso-900: #2c1a14;
+  --color-espresso-800: #3d2419;
+  --color-espresso-700: #5c3828;
+  --color-espresso-600: #7a5040;
+  --color-neutral-100: #f7f3ee;
+  --color-neutral-200: #ede5db;
+  --color-neutral-300: #e0d5c7;
+  --color-neutral-400: #c8b9a8;
+  --color-green-600: #1e3b27;
+  --color-green-500: #2a5237;
+  --color-green-400: #3d6b4a;
+  --color-red-400: #ff9797;
+  --color-red-700: #b91c1c;
+
+  /* --- RADIUS PRIMITIVES (5 variables) --- */
+  /* 999px kept in px intentionally — it's a "guaranteed full pill" value, not a scaled size */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-999: 999px;
+
+  /* --- SPACING SCALE PRIMITIVES (10 variables) --- */
+  /* FIX: space-96 was missing — referenced by section-padding-y-desktop in semantics
+     but never defined here. Added below. space-40 is defined but currently unused
+     by any semantic token — kept in case email templates or the future storefront need it. */
+  --spacing-4: 0.25rem; /* 4px */
+  --spacing-8: 0.5rem; /* 8px */
+  --spacing-12: 0.75rem; /* 12px */
+  --spacing-16: 1rem; /* 16px */
+  --spacing-24: 1.5rem; /* 24px */
+  --spacing-32: 2rem; /* 32px */
+  --spacing-40: 2.5rem; /* 40px — currently unused */
+  --spacing-48: 3rem; /* 48px */
+  --spacing-64: 4rem; /* 64px */
+  --spacing-96: 6rem; /* 96px — FIX: added, was missing */
+
+  /* --- GRID SYSTEM PRIMITIVES (9 variables) --- */
+  /* Grid Columns — unitless counts, no conversion needed */
+  --grid-column-sm: 4;
+  --grid-column-md: 8;
+  --grid-column-lg: 12;
+
+  /* Grid Gutters */
+  --spacing-grid-gutter-sm: 1rem; /* 16px */
+  --spacing-grid-gutter-md: 1.5rem; /* 24px */
+  --spacing-grid-gutter-lg: 2rem; /* 32px */
+
+  /* Grid Page Margins */
+  --spacing-grid-margin-sm: 1rem; /* 16px */
+  --spacing-grid-margin-md: 2.5rem; /* 40px */
+  --spacing-grid-margin-lg: 5rem; /* 80px */
+
+  /* --- SHADOW PRIMITIVES (kept in px intentionally — shadow offsets describe
+       a physical light effect, not type-scale spacing) --- */
+  --shadow-shadow-sm: 0 1px 4px 0 rgba(44, 26, 20, 0.06);
+  --shadow-shadow-md: 0 4px 16px 0 rgba(44, 26, 20, 0.1);
+
+  /* ==========================================================================
+     ==========================================================================
+     PART 2: SEMANTIC TOKENS — functional names that reference the primitives.
+     These are the names you actually use in your HTML/Tailwind classes
+     (e.g. bg-bg-default, text-text-primary). When you start building the
+     email templates or storefront, you'll add NEW semantic tokens here that
+     point back to these same primitives — keeping every product on one brand.
+     ==========================================================================
+     ========================================================================== */
+
+  /* --- COLOR SEMANTICS (24 variables) --- */
+  /* Text */
+  --color-text-primary: var(--color-espresso-900);
+  --color-text-secondary: var(--color-espresso-700);
+  --color-text-muted: var(--color-espresso-600);
+  --color-text-inverse: var(--color-neutral-100);
+
+  /* Backgrounds */
+  --color-bg-default: var(--color-neutral-100);
+  --color-bg-subtle: var(--color-neutral-200);
+  --color-bg-dark: var(--color-espresso-900);
+
+  /* Surfaces */
+  --color-surface-card: var(--color-neutral-200);
+
+  /* Borders */
+  --color-border-default: var(--color-neutral-300);
+  --color-border-strong: var(--color-neutral-400);
+
+  /* Buttons */
+  --color-btn-primary-bg: var(--color-green-600);
+  --color-btn-primary-hover: var(--color-green-500);
+  --color-btn-primary-text: var(--color-neutral-100);
+  --color-btn-ghost-border: var(--color-espresso-900);
+  --color-btn-ghost-text: var(--color-espresso-900);
+
+  /* Accents */
+  --color-accent-default: var(--color-green-600);
+  --color-accent-subtle: var(--color-green-400);
+
+  /* Interactive Inputs */
+  --color-input-bg: var(--color-neutral-100);
+  --color-input-border: var(--color-neutral-300);
+  --color-input-placeholder: var(--color-neutral-400);
+  --color-input-focus-ring: var(--color-green-600);
+  --color-input-error-border: var(--color-red-400);
+
+  /* Validation & Feedback */
+  --color-feedback-text-error: var(--color-red-700);
+  --color-feedback-text-success: var(--color-green-600);
+
+  /* --- FONT FAMILY ALIASES ---
+     Tailwind v4 only auto-generates font-family utilities from the
+     --font-* namespace specifically (not --font-family-*). These two
+     aliases give you clean `font-display` / `font-body` classes to use
+     directly in HTML, instead of arbitrary-value syntax on every element.
+     Apply font-display to all headings (h1–h4), font-body to body/body-lg/caption
+     (or just rely on inheritance from the <body> tag for default text). */
+  --font-display: var(--font-family-display); /* → font-display */
+  --font-body: var(--font-family-body); /* → font-body */
+
+  /* --- TYPOGRAPHY SEMANTICS (27 variables) ---*/
+  /* Heading 1 — use with: font-display tracking-tight */
+  --text-h1-mobile: var(--text-size-31);
+  --text-h1-desktop: var(--text-size-49);
+  --font-weight-h1: var(--font-weight-bold);
+  --leading-h1-mobile: var(--leading-line-height-h3-31);
+  --leading-h1-desktop: var(--leading-line-height-h1-49);
+
+  /* Heading 2 — use with: font-display tracking-tight */
+  --text-h2-mobile: var(--text-size-25);
+  --text-h2-desktop: var(--text-size-39);
+  --font-weight-h2: var(--font-weight-bold);
+  --leading-h2-mobile: var(--leading-line-height-h4-25);
+  --leading-h2-desktop: var(--leading-line-height-h2-39);
+
+  /* Heading 3 — use with: font-display tracking-normal */
+  --text-h3-mobile: var(--text-size-20);
+  --text-h3-desktop: var(--text-size-31);
+  --font-weight-h3: var(--font-weight-semibold);
+  --leading-h3-mobile: var(--leading-line-height-bodyLarge-20);
+  --leading-h3-desktop: var(--leading-line-height-h3-31);
+
+  /* Heading 4 — use with: font-display tracking-normal */
+  --text-h4: var(--text-size-20);
+  --font-weight-h4: var(--font-weight-medium);
+  --leading-h4: var(--leading-line-height-bodyLarge-20);
+
+  /* Body Default — use with: font-body tracking-normal (or just inherit from <body>) */
+  --text-body-size: var(--text-size-16);
+  --font-weight-body: var(--font-weight-regular);
+  --leading-body: var(--leading-line-height-body-16);
+
+  /* Body Large — use with: font-body tracking-normal */
+  --text-body-lg-size: var(--text-size-20);
+  --font-weight-body-lg: var(--font-weight-regular);
+  --leading-body-lg: var(--leading-line-height-bodyLarge-20);
+
+  /* Caption — use with: font-body tracking-loose */
+  --text-caption-size: var(--text-size-13);
+  --font-weight-caption: var(--font-weight-regular);
+  --leading-caption: var(--leading-line-height-caption-13);
+
+  /* --- SPACING SEMANTICS (26 variables) --- */
+  /* Sections */
+  --spacing-section-py-mobile: var(--spacing-48);
+  --spacing-section-py-desktop: var(--spacing-96);
+  --spacing-section-px-mobile: var(--spacing-16);
+  --spacing-section-px-desktop: var(--spacing-64);
+
+  /* Navigation */
+  --spacing-nav-py: var(--spacing-8);
+  --spacing-nav-px-mobile: var(--spacing-16);
+  --spacing-nav-px-desktop: var(--spacing-64);
+
+  /* Content Layout Block Gaps */
+  --spacing-content-mobile-title-to-body: var(--spacing-16);
+  --spacing-content-desktop-title-to-body: var(--spacing-24);
+  --spacing-content-mobile-body-to-cta: var(--spacing-24);
+  --spacing-content-desktop-body-to-cta: var(--spacing-32);
+  --spacing-content-between-paragraphs: var(--spacing-12);
+  --spacing-content-label-to-value: var(--spacing-4);
+  --spacing-padding-24: var(--spacing-24);
+  --spacing-padding-16: var(--spacing-16);
+
+  /* Cards Layout */
+  --spacing-p-24: var(--spacing-24);
+  --spacing-p-16: var(--spacing-16);
+  --spacing-card-gap-mobile: var(--spacing-16);
+  --spacing-card-gap-desktop: var(--spacing-32);
+  --spacing-card-inner-gap: var(--spacing-12);
+
+  /* Buttons Structure */
+  --spacing-button-py: var(--spacing-12);
+  --spacing-button-mobile-px: var(--spacing-24);
+  --spacing-button-desktop-px: var(--spacing-32);
+
+  /* Input Fields */
+  --spacing-input-py: var(--spacing-12);
+  --spacing-input-px: var(--spacing-16);
+
+  /* Form Layout Lists */
+  --spacing-form-stack: var(--spacing-8);
+
+  /* Footer Structural Layout */
+  --spacing-footer-py: var(--spacing-32);
+  --spacing-footer-px-mobile: var(--spacing-16);
+  --spacing-footer-px-desktop: var(--spacing-48);
+
+  /* --- RADIUS SEMANTICS (5 variables) --- */
+  --radius-card: var(--radius-lg);
+  --radius-button: var(--radius-lg);
+  --radius-image: var(--radius-lg);
+  --radius-input: var(--radius-md);
+  --radius-badge: var(--radius-999);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    max-width: 100%;
+  }
+  /*   *{
+    border: 2px solid red;
+  } */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-text-primary font-display;
+  }
+  h1,
+  h2 {
+    @apply font-bold tracking-tight;
+  }
+  h3,
+  h4 {
+    @apply tracking-normal;
+  }
+  h3 {
+    @apply font-semibold;
+  }
+  h4 {
+    @apply font-medium;
+  }
+  img {
+    @apply rounded-image;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-section-py-mobile px-section-px-mobile flex flex-col gap-card-gap-mobile xl:py-section-py-desktop xl:px-section-px-desktop xl:gap-card-gap-desktop;
+  }
+  .h2-title-container {
+    @apply flex flex-col gap-content-label-to-value;
+  }
+  .caption {
+    @apply text-caption-size text-text-muted leading-caption tracking-loose;
+  }
+  .sub-list {
+    @apply space-y-content-between-paragraphs;
+  }
+  .cta {
+    /* 1. Base Styles */
+    @apply w-full max-w-xs text-center transition-all duration-300;
+    @apply bg-btn-primary-bg text-btn-primary-text py-button-py px-button-mobile-px rounded-button;
+
+    /* 2. Hover State */
+    &:hover {
+      @apply bg-btn-primary-hover;
+    }
+
+    /* 3. Focus State (focus-visible better user experience) */
+    &:focus-visible {
+      @apply outline-2 outline-offset-2 outline-input-focus-ring;
+    }
+
+    /* 4. Active (Pressed) State */
+    &:active {
+      @apply opacity-90 scale-[0.98];
+    }
+
+    /* 5. Disabled State */
+    &:disabled {
+      @apply bg-neutral-300 text-text-muted  cursor-not-allowed opacity-60 pointer-events-none;
+    }
+  }
+
+  /* Accessible, Interactive Input Fields */
+  .form-input {
+    @apply w-full bg-input-bg text-text-primary py-input-py px-input-px rounded-input;
+    /* Borders & Transitions */
+    @apply border-2 border-input-border transition-all duration-200 outline-none;
+
+    /* the placeholder */
+    &::placeholder {
+      @apply text-input-placeholder;
+    }
+
+    /* Interactive States grouped cleanly */
+    &:hover {
+      @apply border-border-strong;
+    }
+
+    &:focus {
+      @apply border-input-focus-ring ring-1 ring-input-focus-ring;
+    }
+
+    /* Style invalid entry states (native HTML validation support) */
+    &:invalid:not(:placeholder-shown) {
+      @apply border-input-error-border text-feedback-text-error;
+    }
+  }
+}
+
+@layer utilities {
+  /* State 1: The Hidden State */
+  /* This targets any element holding our "data-animate" marker */
+  [data-animate] {
+    opacity: 0; /* Makes it completely invisible */
+    transform: translateY(24px); /* Pushes it down by 24 pixels */
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out; 
+  }
+  /* State 2: The Visible State */
+  /* This only triggers when JavaScript adds the class ".is-visible" to our element */
+  [data-animate].is-visible {
+    opacity: 1; /* Fades the element fully in */
+    transform: translateY(0); /* Slides it back up to its original spot */
+  }
+  @media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+  h2 {
+    @apply text-h2-mobile xl:text-h2-desktop;
+  }
+  h3 {
+    @apply text-h3-mobile xl:text-h3-desktop;
+  }
+  h4 {
+    @apply text-h4;
+  }
+  .is-error {
+    @apply text-feedback-text-error;
+  }
+  .is-success {
+    @apply text-feedback-text-success;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "emmet.includeLanguages": {
+    "tailwindcss": "css"
+  },
+  "css.validate": false,
+  "tailwindCSS.includeLanguages": {
+    "tailwindcss": "css"
+  },
+  "liveServer.settings.port": 5501
+}

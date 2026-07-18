@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aura Coffee — Coffee Worth Waiting a Season For</title>
+    <meta
+      name="description"
+      content="A seasonal, small-batch coffee blend from Colombia. One harvest. One blend. Then it's gone. Join the waitlist for early access."
+    />
+
+    <!-- Open Graph — controls how this page looks when shared on social media -->
+    <meta
+      property="og:title"
+      content="Aura Coffee — Coffee Worth Waiting a Season For"
+    />
+    <meta
+      property="og:description"
+      content="A seasonal, small-batch coffee blend from Colombia. One harvest. One blend. Then it's gone."
+    />
+    <meta property="og:image" content="./image/product-photo.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="./image/dark-logo.png"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Preload brand fonts to prevent layout shift -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500&display=optional"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500&display=optional"
+    />
+
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+
+  <body
+    class="font-body bg-bg-default text-text-secondary text-body-size leading-body tracking-normal xl:leading-body-lg min-[1300px]:text-body-lg-size"
+  >
+    <!-- Skip navigation link — first focusable element, visible only on keyboard focus -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-btn-primary-bg focus:text-btn-primary-text focus:rounded-button"
+    >
+      Skip to main content
+    </a>
+
+    <header
+      class="w-full sticky top-0 left-0 right-0 z-10 bg-bg-default shadow-md"
+    >
+      <nav
+        aria-label="Main navigation"
+        class="flex items-center justify-between mx-auto py-nav-py px-nav-px-mobile"
+      >
+        <a href="#">
+          <img
+            src="./images/dark-logo.png"
+            class="h-20 w-auto"
+            alt="Aura Coffee Home"
+            width="1024"
+            height="1024"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </a>
+        <a
+          href="#cta-heading"
+          class="text-btn-ghost-text text-center font-semibold border-2 rounded-button hover:bg-bg-subtle transition-colors duration-300 py-button-py px-button-mobile-px xl:px-button-desktop-px"
+          >Get early access</a
+        >
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- HERO SECTION -->
+      <section
+        aria-labelledby="hero-heading"
+        class="section md:flex-row md:items-center"
+      >
+        <!-- content -->
+        <div
+          class="space-y-content-mobile-body-to-cta lg:space-y-content-desktop-body-to-cta md:w-1/2"
+        >
+          <!-- Hero title and Copy -->
+          <div
+            class="space-y-content-mobile-title-to-body lg:space-y-content-desktop-title-to-body"
+          >
+            <h1
+              data-animate
+              id="hero-heading"
+              class="text-h1-mobile leading-h1-mobile lg:text-h1-desktop lg:leading-h1-desktop"
+            >
+              One harvest. One blend. Then it is gone.
+            </h1>
+            <p class="md:max-w-lg">
+              We pull one blend from each harvest season. Wait-list members hear
+              first. No subscription required. No pressure. Just first access to
+              something worth trying.
+            </p>
+          </div>
+          <div class="flex flex-col gap-card-inner-gap w-full">
+            <a href="#cta-heading" class="cta"> Get first access 48hrs. </a>
+            <!-- Caption -->
+            <span class="caption">
+              We will only email you about this release.
+            </span>
+          </div>
+        </div>
+        <picture class="block md:w-1/2">
+          <!-- 1. Super fast AVIF loads if the browser supports it -->
+          <source srcset="./images/product-photo.avif" type="image/avif" />
+
+          <!-- 2. Fast WebP loads if AVIF isn't supported -->
+          <source srcset="./images/product-photo.webp" type="image/webp" />
+
+          <!-- 3. Standard PNG loads if it's an old browser, or if the above fail -->
+          <img
+            src="./images/product-photo.jpg"
+            alt="Matte kraft coffee bag with a deep green accent band and Aura Coffee logo, surrounded by scattered roasted coffee beans on a marble countertop."
+            width="1920"
+            height="1280"
+            fetchpriority="high"
+            decoding="async"
+            class="w-full h-full"
+          />
+        </picture>
+      </section>
+      <!-- PROBLEM SECTION -->
+      <section
+        aria-labelledby="problem-heading"
+        class="w-full section bg-bg-subtle"
+      >
+        <div data-animate class="h2-title-container">
+          <span class="caption">The problem</span>
+          <h2 id="problem-heading">
+            Finding a bag worth finishing has gotten harder
+          </h2>
+        </div>
+        <ul
+          class="flex flex-col gap-content-between-paragraphs list-disc pl-padding-16 lg:pl-padding-24"
+        >
+          <li>Some mornings the cup is great, and some mornings it isn't.</li>
+          <li>
+            Brewing skill matters. But great coffee starts with great beans.
+          </li>
+          <li>
+            Too often, the best releases sell out fast, while ordinary coffee
+            makes big promises and fails short.
+          </li>
+        </ul>
+      </section>
+      <!-- SOLUTION & BENEFITIES SECTION -->
+      <section aria-labelledby="solution-heading" class="section">
+        <div data-animate class="h2-title-container lg:max-w-160 leading-tight">
+          <span class="caption">Solution & Benefits</span>
+          <h2 id="solution-heading">
+            We go looking for one thing: a blend worth coming back for.
+          </h2>
+        </div>
+        <!-- Content -->
+        <div
+          class="flex flex-col gap-card-gap-mobile md:gap-card-gap-desktop md:flex-row"
+        >
+          <!-- TEXT -->
+          <div class="space-y-padding-24 md:w-1/2">
+            <p>
+              We don't blend for consistency. We source for character — then
+              build the roast around it.
+            </p>
+            <!-- list of  benefities  -->
+            <div
+              class="flex flex-col gap-card-gap-mobile md:gap-card-gap-desktop"
+            >
+              <div class="sub-list">
+                <h3>The first sip tells you.</h3>
+                <p>
+                  Before you can explain it, you know this coffee is different.
+                </p>
+              </div>
+              <div class="sub-list">
+                <h3>Good coffee becomes easier.</h3>
+                <p>
+                  You spend less time troubleshooting and more time enjoying.
+                </p>
+              </div>
+              <div class="sub-list">
+                <h3>It earns a second bag.</h3>
+                <p>
+                  Not because a marketing strategy. Because you genuinely want
+                  more of it.
+                </p>
+              </div>
+              <div class="sub-list">
+                <h3>You'll know before you commit.</h3>
+                <p>
+                  Full sourcing notes and tasting details land in your inbox
+                  before the release opens.
+                </p>
+              </div>
+            </div>
+          </div>
+          <picture class="block overflow-hidden md:w-1/2">
+            <source srcset="./images/feature1-img.avif" type="image/avif" />
+            <source srcset="./images/feature1-img.webp" type="image/webp" />
+            <img
+              src="./images/feature1-img.jpg"
+              alt="Espresso-brown coffee bag beside a glass pour-over dripper, carafe, and ceramic mug on a marble kitchen counter, with coffee beans scattered nearby."
+              width="853"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover"
+            />
+          </picture>
+        </div>
+      </section>
+      <!-- Origin Section -->
+      <section aria-labelledby="origin-heading" class="section">
+        <div data-animate class="h2-title-container">
+          <span class="caption">Our Origin</span>
+          <h2 id="origin-heading">Where it comes from</h2>
+        </div>
+        <!-- Content -->
+        <div
+          class="flex flex-col gap-card-gap-mobile lg:gap-card-gap-desktop lg:flex-row"
+        >
+          <picture class="block lg:w-3/5">
+            <source srcset="./images/farmer.avif" type="image/avif" />
+            <source srcset="./images/farmer.webp" type="image/webp" />
+            <img
+              src="./images/farmer.jpg"
+              alt="Coffee farmer harvesting ripe coffee cherries in a lush coffee plantation while carrying a basket of freshly picked cherries."
+              width="1920"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto"
+            />
+          </picture>
+          <!-- LEFT-SIDE -->
+          <div
+            class="flex flex-col gap-card-gap-mobile lg:gap-card-gap-desktop lg:w-2/5"
+          >
+            <!-- MINI IMAGES -->
+            <div class="flex items-center h-52 gap-card-inner-gap">
+              <picture class="block w-1/2 h-full">
+                <source srcset="./images/rosted-beans.avif" type="image/avif" />
+                <source srcset="./images/rosted-beans.webp" type="image/webp" />
+                <img
+                  src="./images/rosted-beans.jpg"
+                  alt="Hands holding freshly harvested red, yellow, and green coffee cherries before processing."
+                  width="1280"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover"
+                />
+              </picture>
+              <picture class="block w-1/2 h-full">
+                <source srcset="./images/row-beans.avif" type="image/avif" />
+                <source srcset="./images/row-beans.webp" type="image/webp" />
+                <img
+                  src="./images//row-beans.jpg"
+                  alt="Freshly roasted coffee beans cooling in a commercial roasting machine as a roaster checks the roast by hand."
+                  width="1280"
+                  height="853"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover"
+                />
+              </picture>
+            </div>
+
+            <!-- STORY -->
+            <div class="">
+              <!-- FOUNDER NAME -->
+              <h3>Mateo Valencia</h3>
+              <p>
+                This season's lot comes from a single region in Colombia, high
+                in the hills, where the harvest is small enough that every batch
+                gets tasted by hand before we choose it. We worked for three
+                seasons before this lot finally gave us what we were chasing —
+                the kind of cup you stop mid-sip for.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- origin dtailes -->
+        <div class="flex items-center justify-between px-padding-16">
+          <div class="sub-list">
+            <h4>Origin</h4>
+            <p>Colombia</p>
+          </div>
+          <div class="sub-list">
+            <h4>Altitude</h4>
+            <p>1,900m</p>
+          </div>
+          <div class="sub-list">
+            <h4>Roast Date</h4>
+            <p>Small Batch</p>
+          </div>
+        </div>
+      </section>
+      <!-- PROMISE SECTION -->
+      <section aria-labelledby="promise-heading" class="section bg-bg-subtle">
+        <!-- promise-top-section -->
+        <div class="space-y-5">
+          <div data-animate class="h2-title-container">
+            <span class="caption">Our Offer</span>
+            <h2 id="promise-heading">
+              Here's exactly what happens when you join
+            </h2>
+          </div>
+          <p>
+            No guesswork. No spam. Just the full story — before this season's
+            batch is gone.
+          </p>
+        </div>
+        <!-- New member -->
+        <div
+          class="space-y-5"
+        >
+          <h3>What you'll receive</h3>
+          <div
+            class="flex flex-col gap-padding-16 lg:flex-row lg:justify-between"
+          >
+            <div class="sub-list">
+              <h4>
+                <span aria-hidden="true" class="text-accent-default mr-2"
+                  >&#10003;</span
+                >
+                Sourcing notes
+              </h4>
+              <p>The full origin story, before anyone else sees it.</p>
+            </div>
+            <div class="sub-list">
+              <h4>
+                <span aria-hidden="true" class="text-accent-default mr-2"
+                  >&#10003;</span
+                >
+                Roast profile
+              </h4>
+              <p>How we roasted it and why.</p>
+            </div>
+            <div class="sub-list">
+              <h4>
+                <span aria-hidden="true" class="text-accent-default mr-2"
+                  >&#10003;</span
+                >
+                Tasting breakdown
+              </h4>
+              <p>What to expect in the cup.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Waitlist member -->
+        <div
+          class="space-y-5"
+        >
+          <h3>Waitlist members also get</h3>
+          <div
+            class="flex flex-col gap-padding-16 lg:flex-row lg:justify-between"
+          >
+            <div class="sub-list">
+              <h4>
+                <span aria-hidden="true" class="text-accent-default mr-2"
+                  >&#10003;</span
+                >
+                48hr early access
+              </h4>
+              <p>Order before the public.</p>
+            </div>
+            <div class="sub-list">
+              <h4>
+                <span aria-hidden="true" class="text-accent-default mr-2"
+                  >&#10003;</span
+                >
+                First allocation
+              </h4>
+              <p>Priority on this season's limited supply.</p>
+            </div>
+            <div class="sub-list">
+              <h4>
+                <span aria-hidden="true" class="text-accent-default mr-2"
+                  >&#10003;</span
+                >
+                One email only
+              </h4>
+              <p>We'll only contact you about this release.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Final CTA -->
+      <section aria-labelledby="cta-heading" class="section">
+        <!-- Text -->
+
+        <div
+          data-animate
+          class="flex flex-col gap-content-mobile-title-to-body"
+        >
+          <h2 id="cta-heading">This season's batch won't last.</h2>
+          <p>
+            Join the list. Be first to know when it's ready — and first to order
+            before anyone else.
+          </p>
+        </div>
+        <!-- Form -->
+        <form
+          id="signup-form"
+          action=""
+          method="post"
+          class="grid grid-cols-1 gap-content-between-paragraphs  md:gap-x-content-mobile-body-to-cta p-form-stack md:grid-cols-3"
+          novalidate
+        >
+          <label for="user-email" class="sr-only">Email address</label>
+          <input
+            class="form-input md:col-span-2 mb-p-16 md:mb-0"
+            type="email"
+            id="user-email"
+            placeholder="Enter your email"
+            required
+            autocomplete="email"
+            aria-describedby="form-feedback"
+          />
+          <p id="form-feedback" aria-live="polite" class="md:row-start-2 md:col-span-2"></p>
+
+          <button type="submit" class="cta">
+            Join Waitlist
+          </button>
+          <span class="caption md:row-start-3 md:col-span-2"
+            >One email. No spam. Unsubscribe anytime.</span
+          >
+        </form>
+      </section>
+    </main>
+
+    <footer
+      class="py-footer-py px-footer-px-mobile lg:px-footer-px-desktop flex flex-col gap-card-gap-mobile lg:gap-card-gap-desktop bg-bg-dark text-text-inverse"
+    >
+      <div
+        class="flex flex-col gap-card-inner-gap lg:flex-row lg:justify-between"
+      >
+        <figure class="w-20 h-auto">
+          <img
+            src="./images/light-logo.png"
+            alt="Aura Coffee home"
+            width="1536"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-auto"
+          />
+        </figure>
+        <div class="flex flex-col gap-content-label-to-value">
+          <h4 class="text-text-inverse">Aura Coffee</h4>
+          <p class="caption text-text-inverse">
+            Coffee worth waiting a season for.
+          </p>
+        </div>
+        <nav>
+          <ul class="list-inside list-disc">
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- CopyRight -->
+      <p class="text-center text-text-inverse caption">
+        &copy; 2026 <strong>Aura Coffee</strong> All rights reserved.
+      </p>
+    </footer>
+
+    <!-- Scripts go here at the bottom — none yet, Stage 4 is zero-JS -->
+    <script src="./animation.js"></script>
+    <script src="./form.js" defer></script>
+  </body>
+</html>

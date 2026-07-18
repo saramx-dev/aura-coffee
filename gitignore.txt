@@ -1,0 +1,22 @@
+# Design files (please do not remove 🙂)
+*.sketch
+*.fig
+*.xd
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# Editor folders (optional)
+.vscode/
+.idea/
+
+# Misc temporary files
+*.tmp
+*.cache
