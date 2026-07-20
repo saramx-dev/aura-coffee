@@ -2,7 +2,7 @@
 
 A single-page, conversion-focused landing page built for Aura Coffee, a seasonal small-batch Colombian blend. The page captures waitlist signups for a limited seasonal release and pipes subscribers directly into a Klaviyo email flow.
 
-**Live demo:**
+**Live demo:**[Project Live Link](https://saramx-dev.github.io/aura-coffee/)
 
 ---
 
