@@ -14,6 +14,22 @@ This project was built end-to-end using a content-first, design-system-driven wo
 
 ---
 
+## Roadmap
+
+- [ ] Welcome email — built, live, and automated (see separate repo below)
+- [ ] "What to Expect" email — sourcing notes, roast profile, tasting breakdown
+- [ ] Release Announcement email
+- [ ] Responsive `srcset` sizing (currently single-size, format-optimized only)
+
+### Welcome Email Marketing.
+
+The waitlist Welcome email — built with MJML, featuring Klaviyo automation, personalization, and full dark-mode support — lives in a separate repository:
+
+**→ [Welcome Email Repo Link](https://github.com/saramx-dev/Aura-Coffee-Welcome-Email)**
+
+---
+
+
 ## Features
 
 - 🎯 Single, focused conversion path — one clear CTA, no competing actions
@@ -30,14 +46,14 @@ This project was built end-to-end using a content-first, design-system-driven wo
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Markup | Semantic HTML5 |
-| Styling | Tailwind CSS v4 (CSS-native `@theme` tokens) |
-| Interactivity | Vanilla JavaScript (ES6+) |
-| Email Marketing | Klaviyo (Subscriptions API) |
-| Design | Figma (design tokens, component states) |
-| Image Optimization | Squoosh (AVIF / WebP / JPG) |
+| Layer              | Technology                                   |
+| ------------------ | -------------------------------------------- |
+| Markup             | Semantic HTML5                               |
+| Styling            | Tailwind CSS v4 (CSS-native `@theme` tokens) |
+| Interactivity      | Vanilla JavaScript (ES6+)                    |
+| Email Marketing    | Klaviyo (Subscriptions API)                  |
+| Design             | Figma (design tokens, component states)      |
+| Image Optimization | Squoosh (AVIF / WebP / JPG)                  |
 
 ---
 
@@ -95,17 +111,10 @@ Open `index.html` in your browser or serve it with any static file server.
 
 ---
 
-## Roadmap
-
-- [ ] Klaviyo email flow — Welcome, Waitlist Confirmation, New Member, Release Announcement
-- [ ] Responsive `srcset` sizing (currently single-size, format-optimized only)
-
----
 
 ## Author
 
 **Sara Mohamed**
-- GitHub: []
 - Twitter: [@saramx_dev](https://x.com/saramx_dev)  
 - LinkedIn: [Sara Mohamed](https://www.linkedin.com/in/saramx-dev/)
 ---
