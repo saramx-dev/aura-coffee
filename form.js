@@ -142,7 +142,7 @@ form?.addEventListener('submit', async (event) => {
 });
 
    // 🌟Execute both in parallel.
-   
+   const [response] = await Promise.all([apiCall, artificialDelay]);
     // ──► [ BLOCK 3: SERVER RESPONSE EVALUATION GATE ]
     // The server responded! Did it accept payload safely?
     if(!response.ok){
